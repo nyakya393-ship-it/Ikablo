@@ -30,11 +30,10 @@ const pages = {
 async function loadPage(pageName){
 
 
-    const app =
-        document.getElementById(
-            "app"
-        );
-
+const app =
+    document.getElementById(
+        "pageContainer"
+    );
 
     if(!pages[pageName]){
 
