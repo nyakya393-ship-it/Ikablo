@@ -1,1 +1,1650 @@
+/* ==========================================
+   COMPONENTS
+   Version: 1.0.0
+========================================== */
 
+/* =========================
+   Card
+========================= */
+
+.card{
+    position:relative;
+    width:100%;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-sm);
+    overflow:hidden;
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.card:hover{
+    background:var(--surface-hover);
+    box-shadow:var(--shadow-md);
+    transform:translateY(-2px);
+}
+
+.card-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:var(--space-4);
+    border-bottom:1px solid var(--border);
+}
+
+.card-title{
+    font-size:var(--font-lg);
+    font-weight:700;
+    color:var(--text);
+}
+
+.card-subtitle{
+    margin-top:4px;
+    font-size:var(--font-sm);
+    color:var(--text-secondary);
+}
+
+.card-content{
+    padding:var(--space-4);
+}
+
+.card-footer{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:var(--space-2);
+    padding:var(--space-4);
+    border-top:1px solid var(--border);
+}
+
+/* =========================
+   Button
+========================= */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    min-height:44px;
+
+    padding:0 18px;
+
+    border-radius:var(--radius-sm);
+
+    font-size:var(--font-md);
+    font-weight:600;
+
+    cursor:pointer;
+    user-select:none;
+
+    transition:
+        background var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+.btn-primary{
+    background:var(--color-primary);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--color-primary-dark);
+}
+
+.btn-secondary{
+    background:var(--bg-secondary);
+    color:var(--text);
+}
+
+.btn-secondary:hover{
+    background:var(--surface-hover);
+}
+
+.btn-success{
+    background:var(--color-success);
+    color:#fff;
+}
+
+.btn-danger{
+    background:var(--color-danger);
+    color:#fff;
+}
+
+.btn-outline{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--border);
+}
+
+.btn-outline:hover{
+    background:var(--surface-hover);
+}
+
+.btn-block{
+    width:100%;
+}
+
+.btn-icon{
+    width:44px;
+    height:44px;
+    padding:0;
+    border-radius:50%;
+}
+
+/* =========================
+   Badge
+========================= */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:22px;
+    height:22px;
+
+    padding:0 8px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.badge-primary{
+    background:var(--color-primary);
+    color:#fff;
+}
+
+.badge-success{
+    background:var(--color-success);
+    color:#fff;
+}
+
+.badge-warning{
+    background:var(--color-warning);
+    color:#111;
+}
+
+.badge-danger{
+    background:var(--color-danger);
+    color:#fff;
+}
+
+/* =========================
+   Divider
+========================= */
+
+.divider{
+    width:100%;
+    height:1px;
+    background:var(--border);
+    margin:var(--space-4) 0;
+}
+
+/* =========================
+   Section Spacing
+========================= */
+
+.stack-xs > * + *{
+    margin-top:var(--space-2);
+}
+
+.stack-sm > * + *{
+    margin-top:var(--space-3);
+}
+
+.stack-md > * + *{
+    margin-top:var(--space-4);
+}
+
+.stack-lg > * + *{
+    margin-top:var(--space-6);
+}
+/* =========================
+   Form
+========================= */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:var(--space-4);
+}
+
+.form-label{
+    font-size:var(--font-sm);
+    font-weight:600;
+    color:var(--text-secondary);
+}
+
+.form-required{
+    color:var(--color-danger);
+    margin-left:4px;
+}
+
+.input,
+.select,
+.textarea{
+    width:100%;
+
+    padding:14px 16px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-sm);
+
+    color:var(--text);
+
+    font-size:var(--font-md);
+
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.input::placeholder,
+.textarea::placeholder{
+    color:var(--text-muted);
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover{
+    background:var(--surface);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus{
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px rgba(123,92,255,.18);
+}
+
+.textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.input:disabled,
+.select:disabled,
+.textarea:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+}
+
+/* =========================
+   Checkbox
+========================= */
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    user-select:none;
+}
+
+.checkbox input{
+    appearance:none;
+
+    width:22px;
+    height:22px;
+
+    border-radius:6px;
+
+    border:2px solid var(--border);
+
+    background:var(--bg-secondary);
+
+    transition:var(--transition);
+}
+
+.checkbox input:checked{
+    background:var(--color-primary);
+    border-color:var(--color-primary);
+}
+
+.checkbox input:checked::after{
+    content:"✓";
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:100%;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+}
+
+/* =========================
+   Switch
+========================= */
+
+.switch{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:16px;
+}
+
+.switch input{
+    display:none;
+}
+
+.switch-slider{
+
+    position:relative;
+
+    width:52px;
+    height:30px;
+
+    background:var(--border);
+
+    border-radius:999px;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+}
+
+.switch-slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:3px;
+    top:3px;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    transition:var(--transition);
+
+}
+
+.switch input:checked + .switch-slider{
+
+    background:var(--color-primary);
+
+}
+
+.switch input:checked + .switch-slider::before{
+
+    transform:translateX(22px);
+
+}
+
+/* =========================
+   Chip
+========================= */
+
+.chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.chip{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:34px;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    font-size:13px;
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.chip:hover{
+
+    background:var(--surface);
+
+}
+
+.chip.active{
+
+    background:var(--color-primary);
+
+    border-color:var(--color-primary);
+
+    color:#fff;
+
+}
+
+/* =========================
+   Tabs
+========================= */
+
+.tabs{
+
+    display:flex;
+
+    gap:8px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+}
+
+.tabs::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.tab{
+
+    flex:0 0 auto;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:var(--bg-secondary);
+
+    color:var(--text-secondary);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+.tab:hover{
+
+    background:var(--surface);
+
+}
+
+.tab.active{
+
+    background:var(--color-primary);
+
+    color:#fff;
+
+}
+
+/* =========================
+   Helper Text
+========================= */
+
+.helper-text{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+}
+
+.error-text{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:var(--color-danger);
+
+}
+/* =========================
+   Battle Card
+========================= */
+
+.battle-card{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.battle-card:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-md);
+}
+
+.battle-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.battle-mode{
+    font-size:13px;
+    font-weight:700;
+    color:var(--color-accent);
+}
+
+.battle-stage{
+    font-size:18px;
+    font-weight:700;
+}
+
+.battle-date{
+    font-size:12px;
+    color:var(--text-muted);
+}
+
+.battle-result{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:74px;
+    height:34px;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.battle-result.win{
+    background:rgba(53,208,127,.15);
+    color:var(--color-success);
+}
+
+.battle-result.lose{
+    background:rgba(255,90,122,.15);
+    color:var(--color-danger);
+}
+
+.battle-result.draw{
+    background:rgba(255,176,32,.15);
+    color:var(--color-warning);
+}
+
+.battle-stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.battle-stat{
+    text-align:center;
+}
+
+.battle-stat-value{
+    display:block;
+    font-size:20px;
+    font-weight:700;
+}
+
+.battle-stat-label{
+    display:block;
+    margin-top:4px;
+    font-size:12px;
+    color:var(--text-secondary);
+}
+
+/* =========================
+   Player Card
+========================= */
+
+.player-card{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:14px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+}
+
+.player-avatar{
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    flex-shrink:0;
+
+}
+
+.player-info{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.player-name{
+
+    font-size:16px;
+    font-weight:700;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+}
+
+.player-weapon{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.player-score{
+
+    text-align:right;
+}
+
+.player-kda{
+
+    font-size:18px;
+    font-weight:700;
+}
+
+.player-paint{
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+}
+
+/* =========================
+   Schedule Card
+========================= */
+
+.schedule-card{
+
+    display:flex;
+    gap:16px;
+
+    padding:18px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.schedule-image{
+
+    width:92px;
+    height:92px;
+
+    border-radius:14px;
+
+    background:var(--bg-secondary);
+
+    flex-shrink:0;
+
+}
+
+.schedule-content{
+
+    flex:1;
+
+}
+
+.schedule-rule{
+
+    font-size:13px;
+    font-weight:700;
+
+    color:var(--color-primary);
+
+}
+
+.schedule-stage{
+
+    margin-top:6px;
+
+    font-size:18px;
+    font-weight:700;
+
+}
+
+.schedule-time{
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+/* =========================
+   Salmon Card
+========================= */
+
+.salmon-card{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+
+    padding:18px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.salmon-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.salmon-stage{
+
+    font-size:18px;
+    font-weight:700;
+
+}
+
+.salmon-time{
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+}
+
+.salmon-weapons{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+}
+
+.salmon-weapon{
+
+    aspect-ratio:1;
+
+    border-radius:12px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+}
+
+/* =========================
+   Weapon Card
+========================= */
+
+.weapon-card{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.weapon-icon{
+
+    width:64px;
+    height:64px;
+
+    border-radius:14px;
+
+    background:var(--bg-secondary);
+
+    flex-shrink:0;
+
+}
+
+.weapon-name{
+
+    font-size:17px;
+    font-weight:700;
+
+}
+
+.weapon-sub{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+/* =========================
+   Gear Card
+========================= */
+
+.gear-card{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.gear-icon{
+
+    width:64px;
+    height:64px;
+
+    border-radius:14px;
+
+    background:var(--bg-secondary);
+
+    flex-shrink:0;
+
+}
+
+.gear-name{
+
+    font-size:16px;
+    font-weight:700;
+
+}
+
+.gear-brand{
+
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.gear-abilities{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-top:10px;
+
+}
+
+.gear-ability{
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+}
+/* =========================
+   Modal
+========================= */
+
+.modal-overlay{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:24px;
+
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
+
+    z-index:5000;
+
+}
+
+.modal-overlay.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.modal{
+
+    width:100%;
+    max-width:520px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    overflow:hidden;
+
+    transform:translateY(24px);
+
+    transition:transform var(--transition);
+
+}
+
+.modal-overlay.show .modal{
+
+    transform:translateY(0);
+
+}
+
+.modal-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.modal-title{
+
+    font-size:20px;
+    font-weight:700;
+
+}
+
+.modal-body{
+
+    padding:20px;
+
+}
+
+.modal-footer{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+
+    padding:20px;
+
+    border-top:1px solid var(--border);
+
+}
+
+/* =========================
+   Dialog
+========================= */
+
+.dialog{
+
+    text-align:center;
+
+}
+
+.dialog-icon{
+
+    width:72px;
+    height:72px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    background:var(--bg-secondary);
+
+}
+
+.dialog-title{
+
+    font-size:22px;
+    font-weight:700;
+
+}
+
+.dialog-message{
+
+    margin-top:12px;
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+/* =========================
+   Toast
+========================= */
+
+.toast-container{
+
+    position:fixed;
+
+    left:50%;
+    bottom:100px;
+
+    transform:translateX(-50%);
+
+    width:min(92%,420px);
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+
+    z-index:6000;
+
+}
+
+.toast{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.toast.success{
+
+    border-left:5px solid var(--color-success);
+
+}
+
+.toast.error{
+
+    border-left:5px solid var(--color-danger);
+
+}
+
+.toast.warning{
+
+    border-left:5px solid var(--color-warning);
+
+}
+
+.toast.info{
+
+    border-left:5px solid var(--color-accent);
+
+}
+
+/* =========================
+   Loading Spinner
+========================= */
+
+.spinner{
+
+    width:40px;
+    height:40px;
+
+    border:4px solid var(--border);
+
+    border-top-color:var(--color-primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================
+   Skeleton
+========================= */
+
+.skeleton{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--bg-secondary);
+
+}
+
+.skeleton::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.08),
+
+            transparent
+
+        );
+
+    animation:skeleton-loading 1.4s infinite;
+
+}
+
+@keyframes skeleton-loading{
+
+    100%{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/* =========================
+   Progress
+========================= */
+
+.progress{
+
+    width:100%;
+    height:10px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    background:var(--bg-secondary);
+
+}
+
+.progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:var(--color-primary);
+
+    transition:width .4s ease;
+
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.empty-state{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:48px 24px;
+
+}
+
+.empty-icon{
+
+    width:88px;
+    height:88px;
+
+    border-radius:50%;
+
+    background:var(--bg-secondary);
+
+    margin-bottom:20px;
+
+}
+
+.empty-title{
+
+    font-size:20px;
+    font-weight:700;
+
+}
+
+.empty-text{
+
+    margin-top:10px;
+
+    max-width:320px;
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:600px){
+
+    .battle-stats{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .schedule-card,
+    .weapon-card,
+    .gear-card{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+    .schedule-image,
+    .weapon-icon,
+    .gear-icon{
+
+        width:100%;
+        height:160px;
+
+    }
+
+}
+/* =========================
+   Utility
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+.flex{
+    display:flex;
+}
+
+.inline-flex{
+    display:inline-flex;
+}
+
+.grid{
+    display:grid;
+}
+
+.block{
+    display:block;
+}
+
+.flex-column{
+    flex-direction:column;
+}
+
+.flex-wrap{
+    flex-wrap:wrap;
+}
+
+.items-center{
+    align-items:center;
+}
+
+.items-start{
+    align-items:flex-start;
+}
+
+.items-end{
+    align-items:flex-end;
+}
+
+.justify-center{
+    justify-content:center;
+}
+
+.justify-between{
+    justify-content:space-between;
+}
+
+.justify-end{
+    justify-content:flex-end;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.w-full{
+    width:100%;
+}
+
+.h-full{
+    height:100%;
+}
+
+/* =========================
+   Gap
+========================= */
+
+.gap-1{gap:var(--space-1);}
+.gap-2{gap:var(--space-2);}
+.gap-3{gap:var(--space-3);}
+.gap-4{gap:var(--space-4);}
+.gap-5{gap:var(--space-5);}
+.gap-6{gap:var(--space-6);}
+
+/* =========================
+   Margin
+========================= */
+
+.mt-1{margin-top:var(--space-1);}
+.mt-2{margin-top:var(--space-2);}
+.mt-3{margin-top:var(--space-3);}
+.mt-4{margin-top:var(--space-4);}
+.mt-5{margin-top:var(--space-5);}
+.mt-6{margin-top:var(--space-6);}
+
+.mb-1{margin-bottom:var(--space-1);}
+.mb-2{margin-bottom:var(--space-2);}
+.mb-3{margin-bottom:var(--space-3);}
+.mb-4{margin-bottom:var(--space-4);}
+.mb-5{margin-bottom:var(--space-5);}
+.mb-6{margin-bottom:var(--space-6);}
+
+/* =========================
+   Padding
+========================= */
+
+.p-1{padding:var(--space-1);}
+.p-2{padding:var(--space-2);}
+.p-3{padding:var(--space-3);}
+.p-4{padding:var(--space-4);}
+.p-5{padding:var(--space-5);}
+.p-6{padding:var(--space-6);}
+
+/* =========================
+   Radius
+========================= */
+
+.rounded-sm{
+    border-radius:var(--radius-sm);
+}
+
+.rounded-md{
+    border-radius:var(--radius-md);
+}
+
+.rounded-lg{
+    border-radius:var(--radius-lg);
+}
+
+.rounded-full{
+    border-radius:999px;
+}
+
+/* =========================
+   Shadow
+========================= */
+
+.shadow-sm{
+    box-shadow:var(--shadow-sm);
+}
+
+.shadow-md{
+    box-shadow:var(--shadow-md);
+}
+
+.shadow-lg{
+    box-shadow:var(--shadow-lg);
+}
+
+/* =========================
+   Glass Effect
+========================= */
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =========================
+   Hover Effect
+========================= */
+
+.hover-lift{
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.hover-scale{
+
+    transition:transform var(--transition);
+
+}
+
+.hover-scale:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* =========================
+   Fade Animation
+========================= */
+
+.fade-in{
+
+    animation:fadeIn .35s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .4s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--border);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--color-primary);
+
+}
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:var(--border) var(--bg);
+
+}
