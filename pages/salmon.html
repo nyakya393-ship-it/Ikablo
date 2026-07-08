@@ -1,1 +1,994 @@
+<section class="salmon-page">
 
+
+    <!-- =========================
+         Header
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h1 class="page-section-title">
+
+                サーモンラン
+
+            </h1>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Current Shift
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                現在のシフト
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="salmon-shift-card">
+
+
+            <div class="shift-stage">
+
+
+                <div class="stage-image">
+
+                </div>
+
+
+                <h3
+
+                    id="salmonCurrentStage"
+
+                >
+
+                    ステージ名
+
+                </h3>
+
+
+            </div>
+
+
+
+            <div class="shift-weapons">
+
+
+                <h3>
+
+                    支給ブキ
+
+                </h3>
+
+
+
+                <div
+
+                    id="currentWeapons"
+
+                    class="weapon-grid"
+
+                >
+
+
+                    <div class="weapon-card">
+
+                        --
+
+                    </div>
+
+
+                    <div class="weapon-card">
+
+                        --
+
+                    </div>
+
+
+                    <div class="weapon-card">
+
+                        --
+
+                    </div>
+
+
+                    <div class="weapon-card">
+
+                        --
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Player Rating
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                評価
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    評価値
+
+                </div>
+
+
+                <div
+
+                    id="salmonPower"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    称号
+
+                </div>
+
+
+                <div
+
+                    id="salmonTitle"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    最大危険度
+
+                </div>
+
+
+                <div
+
+                    id="maxHazard"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    バイト数
+
+                </div>
+
+
+                <div
+
+                    id="totalSalmonRuns"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Salmon Run History
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                バイト履歴
+
+            </h2>
+
+
+            <button
+
+                class="page-section-link"
+
+                data-page="salmon-history"
+
+            >
+
+                すべて見る
+
+            </button>
+
+
+        </div>
+
+
+
+        <div
+
+            id="salmonHistoryList"
+
+            class="salmon-history-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+            <article class="salmon-card">
+
+
+                <div class="salmon-card-header">
+
+
+                    <span class="salmon-result success">
+
+                        クリア
+
+                    </span>
+
+
+                    <span class="salmon-time">
+
+                        時間
+
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="salmon-card-body">
+
+
+                    <div class="salmon-wave">
+
+
+                        <span>
+
+                            WAVE
+
+                        </span>
+
+
+                        <strong>
+
+                            3/3
+
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <div class="salmon-stats">
+
+
+                        <div>
+
+                            <span>
+
+                                金イクラ
+
+                            </span>
+
+
+                            <strong>
+
+                                --
+
+                            </strong>
+
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+
+                                赤イクラ
+
+                            </span>
+
+
+                            <strong>
+
+                                --
+
+                            </strong>
+
+
+                        </div>
+
+
+
+                        <div>
+
+                            <span>
+
+                                救助
+
+                            </span>
+
+
+                            <strong>
+
+                                --
+
+                            </strong>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Wave Statistics
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                WAVE分析
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    WAVE1成功率
+
+                </div>
+
+
+                <div
+
+                    id="wave1Rate"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    WAVE2成功率
+
+                </div>
+
+
+                <div
+
+                    id="wave2Rate"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    WAVE3成功率
+
+                </div>
+
+
+                <div
+
+                    id="wave3Rate"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    失敗率
+
+                </div>
+
+
+                <div
+
+                    id="failRate"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Boss Statistics
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                オオモノ討伐
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="bossList"
+
+            class="boss-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Boss Detail
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                オオモノ詳細
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="bossDetailList"
+
+            class="boss-detail-list"
+
+        >
+
+
+            <article class="boss-card">
+
+
+                <div class="boss-icon">
+
+                </div>
+
+
+                <div class="boss-info">
+
+
+                    <h3>
+
+                        オオモノ名
+
+                    </h3>
+
+
+                    <div class="boss-stats">
+
+
+                        <span>
+
+                            討伐 --
+
+                        </span>
+
+
+                        <span>
+
+                            出現 --
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Weapon Statistics
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ブキ別成績
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="salmonWeaponStats"
+
+            class="weapon-stat-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Hazard Level
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                危険度分析
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    平均危険度
+
+                </div>
+
+
+                <div
+
+                    id="averageHazard"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    最高危険度
+
+                </div>
+
+
+                <div
+
+                    id="highestHazard"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    達人到達回数
+
+                </div>
+
+
+                <div
+
+                    id="legendCount"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    伝説帯維持
+
+                </div>
+
+
+                <div
+
+                    id="legendKeep"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Save / Share
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="data-actions">
+
+
+            <button
+
+                id="saveSalmonButton"
+
+                class="btn btn-primary"
+
+            >
+
+                バイト記録を保存
+
+            </button>
+
+
+
+            <button
+
+                id="shareSalmonButton"
+
+                class="btn btn-secondary"
+
+            >
+
+                結果を共有
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Loading / Error
+    ========================== -->
+
+
+    <section
+
+        id="salmonLoading"
+
+        class="loading-page hidden"
+
+    >
+
+
+        <div class="spinner">
+
+        </div>
+
+
+        <p class="loading-text">
+
+            サーモンランデータ取得中...
+
+        </p>
+
+
+    </section>
+
+
+
+    <section
+
+        id="salmonError"
+
+        class="error-page hidden"
+
+    >
+
+
+        <h2>
+
+            データを取得できませんでした
+
+        </h2>
+
+
+
+        <button
+
+            id="salmonRetry"
+
+            class="btn btn-primary"
+
+        >
+
+            再試行
+
+        </button>
+
+
+    </section>
+
+
+</section>
