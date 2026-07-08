@@ -1,31 +1,644 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>InkBoard</title>
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Splatoon 3 Companion">
+    <meta charset="UTF-8">
 
-  <link rel="manifest" href="manifest.webmanifest">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-  <link rel="icon" href="assets/icons/icon-192.png">
+    <meta
+        name="theme-color"
+        content="#7b5cff"
+    >
 
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/variables.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages.css">
+    <meta
+        name="description"
+        content="InkBoard - Splatoon 3 Battle Tracker"
+    >
+
+    <title>InkBoard</title>
+
+    <!-- PWA -->
+
+    <link
+        rel="manifest"
+        href="manifest.webmanifest"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/icons/icon-192.png"
+    >
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/reset.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/pages.css"
+    >
+
 </head>
 
 <body>
 
 <div id="app">
 
+    <!-- =========================
+         App Header
+    ========================== -->
+
+    <header class="app-header">
+
+        <div class="header-left">
+
+            <button
+                class="btn-icon"
+                id="menuButton"
+                aria-label="メニュー"
+            >
+
+                ☰
+
+            </button>
+
+        </div>
+
+        <div class="header-center">
+
+            <h1 class="app-title">
+
+                InkBoard
+
+            </h1>
+
+        </div>
+
+        <div class="header-right">
+
+            <button
+                class="btn-icon"
+                id="notificationButton"
+                aria-label="通知"
+            >
+
+                🔔
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+         Main
+    ========================== -->
+
+    <main
+        id="pageContainer"
+        class="page-container page-enter"
+    >        <!-- =========================
+             Home Page
+        ========================== -->
+
+        <section
+            id="homePage"
+            class="home-page"
+        >
+
+            <section class="home-hero">
+
+                <div class="home-hero-content">
+
+                    <h2 class="home-title">
+                        ようこそ、InkBoardへ
+                    </h2>
+
+                    <p class="home-subtitle">
+                        バトル・サーモンラン・スケジュールを
+                        まとめて管理できます。
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Quick Actions -->
+
+            <section class="page-section">
+
+                <div class="page-section-header">
+
+                    <h3 class="page-section-title">
+                        クイックアクセス
+                    </h3>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <button class="quick-action" data-page="battles">
+                        <div class="quick-action-icon"></div>
+                        <span class="quick-action-title">バトル</span>
+                    </button>
+
+                    <button class="quick-action" data-page="schedule">
+                        <div class="quick-action-icon"></div>
+                        <span class="quick-action-title">スケジュール</span>
+                    </button>
+
+                    <button class="quick-action" data-page="salmon">
+                        <div class="quick-action-icon"></div>
+                        <span class="quick-action-title">サーモンラン</span>
+                    </button>
+
+                    <button class="quick-action" data-page="analysis">
+                        <div class="quick-action-icon"></div>
+                        <span class="quick-action-title">分析</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Dashboard -->
+
+            <section class="page-section">
+
+                <div class="page-section-header">
+
+                    <h3 class="page-section-title">
+                        ダッシュボード
+                    </h3>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-item">
+
+                        <div class="dashboard-label">
+                            総試合数
+                        </div>
+
+                        <div
+                            class="dashboard-value"
+                            id="totalBattles"
+                        >
+                            --
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-item">
+
+                        <div class="dashboard-label">
+                            勝率
+                        </div>
+
+                        <div
+                            class="dashboard-value"
+                            id="winRate"
+                        >
+                            --
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-item">
+
+                        <div class="dashboard-label">
+                            サーモンラン
+                        </div>
+
+                        <div
+                            class="dashboard-value"
+                            id="salmonCount"
+                        >
+                            --
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-item">
+
+                        <div class="dashboard-label">
+                            塗りポイント
+                        </div>
+
+                        <div
+                            class="dashboard-value"
+                            id="paintPoint"
+                        >
+                            --
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Notices -->
+
+            <section class="page-section">
+
+                <div class="page-section-header">
+
+                    <h3 class="page-section-title">
+                        お知らせ
+                    </h3>
+
+                </div>
+
+                <div
+                    id="noticeList"
+                    class="notice-list"
+                >
+
+                </div>
+
+            </section>
+
+        </section>
+        <!-- =========================
+             Loading Layer
+        ========================== -->
+
+        <section
+            id="loadingPage"
+            class="loading-page hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p class="loading-text">
+                データを読み込み中...
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             Login Page
+        ========================== -->
+
+        <section
+            id="loginPage"
+            class="login-page hidden"
+        >
+
+            <div class="login-card">
+
+                <h2 class="login-title">
+                    任天堂アカウントでサインイン
+                </h2>
+
+                <p class="login-description">
+
+                    サインインすると、
+                    バトル・サーモンランなどの
+                    データ管理を開始できます。
+
+                </p>
+
+                <button
+                    id="loginButton"
+                    class="btn btn-primary btn-block"
+                >
+
+                    任天堂アカウントでサインイン
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         Global UI Layer
+    ========================== -->
+
+
+    <!-- Toast -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+    >
+
+    </div>
+
+
+    <!-- Modal -->
+
+    <div
+        id="modalOverlay"
+        class="modal-overlay"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2
+                    id="modalTitle"
+                    class="modal-title"
+                >
+                    タイトル
+                </h2>
+
+
+                <button
+                    id="modalCloseButton"
+                    class="btn-icon"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div
+                id="modalBody"
+                class="modal-body"
+            >
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    id="modalCancelButton"
+                    class="btn btn-secondary"
+                >
+
+                    キャンセル
+
+                </button>
+
+
+                <button
+                    id="modalOkButton"
+                    class="btn btn-primary"
+                >
+
+                    OK
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Side Menu -->
+
+    <aside
+        id="sideMenu"
+        class="side-menu"
+    >
+
+        <div class="side-menu-header">
+
+            <h2>
+                InkBoard
+            </h2>
+
+        </div>
+
+
+        <nav class="side-menu-nav">
+
+            <button
+                class="side-menu-item"
+                data-page="home"
+            >
+                ホーム
+            </button>
+
+
+            <button
+                class="side-menu-item"
+                data-page="battles"
+            >
+                バトル
+            </button>
+
+
+            <button
+                class="side-menu-item"
+                data-page="schedule"
+            >
+                スケジュール
+            </button>
+
+
+            <button
+                class="side-menu-item"
+                data-page="salmon"
+            >
+                サーモンラン
+            </button>
+
+
+            <button
+                class="side-menu-item"
+                data-page="analysis"
+            >
+                分析
+            </button>
+
+
+            <button
+                class="side-menu-item"
+                data-page="settings"
+            >
+                設定
+            </button>
+
+        </nav>
+
+    </aside>
+        <!-- =========================
+         Bottom Navigation
+    ========================== -->
+
+    <nav
+        id="bottomNav"
+        class="bottom-nav"
+    >
+
+        <button
+            class="bottom-nav-item active"
+            data-page="home"
+        >
+
+            <span class="bottom-nav-icon">
+                🏠
+            </span>
+
+            <span>
+                ホーム
+            </span>
+
+        </button>
+
+
+        <button
+            class="bottom-nav-item"
+            data-page="battles"
+        >
+
+            <span class="bottom-nav-icon">
+                ⚔️
+            </span>
+
+            <span>
+                バトル
+            </span>
+
+        </button>
+
+
+        <button
+            class="bottom-nav-item"
+            data-page="schedule"
+        >
+
+            <span class="bottom-nav-icon">
+                🗓️
+            </span>
+
+            <span>
+                スケジュール
+            </span>
+
+        </button>
+
+
+        <button
+            class="bottom-nav-item"
+            data-page="salmon"
+        >
+
+            <span class="bottom-nav-icon">
+                🐟
+            </span>
+
+            <span>
+                サーモン
+            </span>
+
+        </button>
+
+
+        <button
+            class="bottom-nav-item"
+            data-page="settings"
+        >
+
+            <span class="bottom-nav-icon">
+                ⚙️
+            </span>
+
+            <span>
+                設定
+            </span>
+
+        </button>
+
+
+    </nav>
+
+
 </div>
 
-<script type="module" src="assets/js/app.js"></script>
+
+<!-- =========================
+     JavaScript
+========================== -->
+
+
+<script src="assets/js/storage.js"></script>
+
+<script src="assets/js/ui.js"></script>
+
+<script src="assets/js/router.js"></script>
+
+<script src="assets/js/app.js"></script>
+
+
+<!-- Service Worker -->
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener(
+        "load",
+        ()=>{
+
+            navigator.serviceWorker.register(
+                "service-worker.js"
+            );
+
+        }
+    );
+
+}
+
+</script>
+
 
 </body>
+
 </html>
