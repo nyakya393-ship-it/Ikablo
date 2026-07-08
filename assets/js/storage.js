@@ -26,17 +26,21 @@ const defaultData = {
 
     settings: {
 
+    darkMode: false,
 
-        darkMode: false,
+    compactMode: false,
 
+    notifications: true,
 
-        compactMode: false,
+    nintendoAccount: {
 
+        linked:false,
 
-        notifications: true
-
+        username:null
 
     }
+
+}
 
 
 };
@@ -432,5 +436,44 @@ function initializeStorage(){
 
     }
 
+
+}
+// =========================
+// Nintendo Account
+// =========================
+
+
+function getNintendoAccount(){
+
+    const data =
+        getStorageData();
+
+
+    return (
+        data.settings.nintendoAccount
+        ||
+        {
+            linked:false,
+            username:null
+        }
+    );
+
+}
+
+
+
+function saveNintendoAccount(account){
+
+    const data =
+        getStorageData();
+
+
+    data.settings.nintendoAccount =
+        account;
+
+
+    saveStorageData(
+        data
+    );
 
 }
