@@ -223,3 +223,459 @@
 
 
     </section>
+　　　    <!-- =========================
+         Recent Battles
+    ========================== -->
+
+    <section class="page-section">
+
+        <div class="page-section-header">
+
+            <h2 class="page-section-title">
+                最近のバトル
+            </h2>
+
+
+            <button
+                class="page-section-link"
+                data-page="battles"
+            >
+                すべて見る
+            </button>
+
+        </div>
+
+
+        <div
+            id="recentBattleList"
+            class="battle-list"
+        >
+
+            <!-- JavaScriptで生成 -->
+
+            <div class="battle-card">
+
+                <div class="battle-card-header">
+
+                    <span class="battle-mode">
+                        ナワバリバトル
+                    </span>
+
+
+                    <span class="battle-result win">
+                        WIN
+                    </span>
+
+                </div>
+
+
+                <div class="battle-card-body">
+
+                    <div class="battle-stage">
+
+                        ステージ
+
+                    </div>
+
+
+                    <div class="battle-stats">
+
+                        <div>
+
+                            <span>
+                                キル
+                            </span>
+
+                            <strong>
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                デス
+                            </span>
+
+                            <strong>
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                塗り
+                            </span>
+
+                            <strong>
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Schedule Preview
+    ========================== -->
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                現在のスケジュール
+
+            </h2>
+
+
+            <button
+                class="page-section-link"
+                data-page="schedule"
+            >
+
+                詳細
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="schedule-preview">
+
+
+            <div class="schedule-preview-card">
+
+
+                <div class="schedule-mode">
+
+                    バンカラマッチ
+
+                </div>
+
+
+                <div class="schedule-stage">
+
+                    ステージ情報
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="schedule-preview-card">
+
+
+                <div class="schedule-mode">
+
+                    サーモンラン
+
+                </div>
+
+
+                <div class="schedule-stage">
+
+                    シフト情報
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Salmon Summary
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                サーモンラン
+
+            </h2>
+
+
+            <button
+                class="page-section-link"
+                data-page="salmon"
+            >
+
+                詳細
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    最高評価
+
+                </div>
+
+
+                <div
+                    class="dashboard-value"
+                    id="salmonRank"
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    バイト回数
+
+                </div>
+
+
+                <div
+                    class="dashboard-value"
+                    id="salmonWorks"
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Sync Status
+    ========================== -->
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+            <h2 class="page-section-title">
+
+                データ同期
+
+            </h2>
+
+        </div>
+
+
+        <div class="data-card">
+
+
+            <div class="data-title">
+
+                Nintendo Account
+
+            </div>
+
+
+            <div
+                class="data-description"
+                id="syncDescription"
+            >
+
+                未接続です。
+                サインインすると戦績データを同期できます。
+
+            </div>
+
+
+            <div class="data-actions">
+
+
+                <button
+                    class="btn btn-primary"
+                    id="syncButton"
+                >
+
+                    同期する
+
+                </button>
+
+
+                <button
+                    class="btn btn-secondary"
+                    id="refreshDataButton"
+                >
+
+                    更新
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Event Information
+    ========================== -->
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                イベント
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+            id="eventList"
+            class="notice-list"
+        >
+
+
+            <article class="notice-item">
+
+
+                <h3 class="notice-title">
+
+                    最新イベント
+
+                </h3>
+
+
+                <p class="notice-date">
+
+                    情報を取得中...
+
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         App Information
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                InkBoard
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="data-card">
+
+
+            <div class="data-title">
+
+                Splatoon 3 Battle Manager
+
+            </div>
+
+
+            <div class="data-description">
+
+
+                バトル記録、
+                サーモンラン、
+                スケジュール管理を
+                一つにまとめた管理アプリ。
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+</section>
