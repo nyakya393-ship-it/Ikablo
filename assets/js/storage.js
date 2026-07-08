@@ -124,3 +124,313 @@ function hasStorageData(){
 
 
 }
+// =========================
+// Battle Data Management
+// =========================
+
+
+
+function addBattle(battle){
+
+
+    const data =
+        getStorageData();
+
+
+
+    data.battles.push(
+
+        {
+
+            id:
+                Date.now(),
+
+
+            ...battle
+
+        }
+
+    );
+
+
+
+    saveStorageData(
+        data
+    );
+
+
+}
+
+
+
+
+
+function updateBattle(id, newData){
+
+
+    const data =
+        getStorageData();
+
+
+
+    const index =
+        data.battles.findIndex(
+
+            battle =>
+                battle.id === id
+
+        );
+
+
+
+    if(index === -1){
+
+        return false;
+
+    }
+
+
+
+    data.battles[index] = {
+
+        ...data.battles[index],
+
+        ...newData
+
+    };
+
+
+
+    saveStorageData(
+        data
+    );
+
+
+
+    return true;
+
+
+}
+
+
+
+
+
+function deleteBattle(id){
+
+
+    const data =
+        getStorageData();
+
+
+
+    data.battles =
+        data.battles.filter(
+
+            battle =>
+                battle.id !== id
+
+        );
+
+
+
+    saveStorageData(
+        data
+    );
+
+
+}
+
+
+
+
+
+// =========================
+// Gear Management
+// =========================
+
+
+
+function saveGearSet(gear){
+
+
+    const data =
+        getStorageData();
+
+
+
+    data.gearSets.push(
+
+        {
+
+            id:
+                Date.now(),
+
+
+            ...gear
+
+        }
+
+    );
+
+
+
+    saveStorageData(
+        data
+    );
+
+
+}
+
+
+
+
+
+function updateSettings(settings){
+
+
+    const data =
+        getStorageData();
+
+
+
+    data.settings = {
+
+        ...data.settings,
+
+        ...settings
+
+    };
+
+
+
+    saveStorageData(
+        data
+    );
+
+
+}
+// =========================
+// Common Storage Utilities
+// =========================
+
+
+
+// 全戦績取得
+
+function getBattles(){
+
+
+    const data =
+        getStorageData();
+
+
+
+    return data.battles || [];
+
+
+}
+
+
+
+
+// ギア一覧取得
+
+function getGearSets(){
+
+
+    const data =
+        getStorageData();
+
+
+
+    return data.gearSets || [];
+
+
+}
+
+
+
+
+// 設定取得
+
+function getSettings(){
+
+
+    const data =
+        getStorageData();
+
+
+
+    return data.settings || {};
+
+
+}
+
+
+
+
+// データ全削除確認
+
+function clearAllData(){
+
+
+    resetStorageData();
+
+
+}
+
+
+
+// データ件数取得
+
+function getDataCount(){
+
+
+    const data =
+        getStorageData();
+
+
+
+    return {
+
+
+        battles:
+            data.battles.length,
+
+
+        gearSets:
+            data.gearSets.length
+
+
+    };
+
+
+}
+
+
+
+
+// 初回起動チェック
+
+function initializeStorage(){
+
+
+    if(
+        !hasStorageData()
+    ){
+
+
+        saveStorageData(
+
+            structuredClone(
+                defaultData
+            )
+
+        );
+
+
+    }
+
+
+}
