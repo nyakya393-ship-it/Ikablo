@@ -1,1 +1,114 @@
+/* ==========================================
+   InkBoard - Design Variables
+   Version: 1.0.0
+========================================== */
 
+:root{
+
+    /* =========================
+       Brand
+    ========================= */
+
+    --color-primary:#7B5CFF;
+    --color-primary-light:#9A82FF;
+    --color-primary-dark:#5B3EE6;
+
+    --color-accent:#37D4FF;
+    --color-success:#35D07F;
+    --color-warning:#FFB020;
+    --color-danger:#FF5A7A;
+
+    /* =========================
+       Background
+    ========================= */
+
+    --bg:#111827;
+    --bg-secondary:#1F2937;
+    --bg-tertiary:#2B3648;
+
+    /* =========================
+       Surface
+    ========================= */
+
+    --surface:#202B3D;
+    --surface-hover:#2A3750;
+
+    /* =========================
+       Text
+    ========================= */
+
+    --text:#FFFFFF;
+    --text-secondary:#B8C1D1;
+    --text-muted:#8A94A8;
+
+    /* =========================
+       Border
+    ========================= */
+
+    --border:#334155;
+
+    /* =========================
+       Radius
+    ========================= */
+
+    --radius-xs:6px;
+    --radius-sm:10px;
+    --radius-md:16px;
+    --radius-lg:22px;
+    --radius-xl:28px;
+
+    /* =========================
+       Shadow
+    ========================= */
+
+    --shadow-sm:0 2px 8px rgba(0,0,0,.18);
+    --shadow-md:0 8px 20px rgba(0,0,0,.24);
+    --shadow-lg:0 16px 36px rgba(0,0,0,.32);
+
+    /* =========================
+       Spacing
+    ========================= */
+
+    --space-1:4px;
+    --space-2:8px;
+    --space-3:12px;
+    --space-4:16px;
+    --space-5:20px;
+    --space-6:24px;
+    --space-7:32px;
+    --space-8:40px;
+
+    /* =========================
+       Font
+    ========================= */
+
+    --font-family:
+        "SF Pro Display",
+        "Hiragino Sans",
+        "Noto Sans JP",
+        sans-serif;
+
+    --font-xs:12px;
+    --font-sm:14px;
+    --font-md:16px;
+    --font-lg:18px;
+    --font-xl:22px;
+    --font-2xl:28px;
+
+    /* =========================
+       Transition
+    ========================= */
+
+    --transition-fast:.15s ease;
+    --transition:.25s ease;
+    --transition-slow:.4s ease;
+
+    /* =========================
+       Layout
+    ========================= */
+
+    --header-height:64px;
+    --bottom-nav-height:78px;
+    --max-width:720px;
+
+}
