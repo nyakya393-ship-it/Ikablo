@@ -23,7 +23,27 @@ const pages = {
 
 };
 
+function getPageFromHash(){
 
+
+    const hash =
+        location.hash.replace(
+            "#",
+            ""
+        );
+
+
+    if(hash.startsWith("battle-detail")){
+
+        return "detail";
+
+    }
+
+
+    return hash || "home";
+
+
+}
 
 // ページ読み込み
 
