@@ -1,1 +1,1366 @@
+/* ==========================================
+   InkBoard - Pages
+   Version: 1.0.0
+========================================== */
 
+/* =========================
+   Home
+========================= */
+
+.home-page{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.home-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:24px;
+
+    border-radius:var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-primary-dark)
+        );
+
+    color:#fff;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.home-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,.15),
+            transparent 55%
+        );
+
+    pointer-events:none;
+
+}
+
+.home-hero-content{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.home-title{
+
+    font-size:30px;
+
+    font-weight:800;
+
+}
+
+.home-subtitle{
+
+    margin-top:8px;
+
+    opacity:.92;
+
+    line-height:1.7;
+
+}
+
+/* =========================
+   Quick Actions
+========================= */
+
+.quick-actions{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.quick-action{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:22px 16px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+
+}
+
+.quick-action:hover{
+
+    transform:translateY(-2px);
+
+    background:var(--surface-hover);
+
+}
+
+.quick-action-icon{
+
+    width:54px;
+    height:54px;
+
+    border-radius:16px;
+
+    background:var(--bg-secondary);
+
+}
+
+.quick-action-title{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    text-align:center;
+
+}
+
+/* =========================
+   Section Header
+========================= */
+
+.page-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.page-section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.page-section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.page-section-link{
+
+    font-size:14px;
+
+    color:var(--color-primary);
+
+}
+
+/* =========================
+   Dashboard Grid
+========================= */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.dashboard-item{
+
+    padding:18px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.dashboard-label{
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.dashboard-value{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+/* =========================
+   Notice Card
+========================= */
+
+.notice-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.notice-item{
+
+    padding:16px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.notice-title{
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.notice-date{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:640px){
+
+    .home-title{
+
+        font-size:26px;
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* =========================
+   Battles Page
+========================= */
+
+.battles-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+/* =========================
+   Search
+========================= */
+
+.search-area{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-input{
+    width:100%;
+    height:52px;
+
+    padding:0 16px 0 48px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    color:var(--text);
+
+    font-size:15px;
+}
+
+.search-icon{
+    position:absolute;
+
+    left:16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    opacity:.7;
+}
+
+/* =========================
+   Filter
+========================= */
+
+.filter-row{
+    display:flex;
+    gap:12px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.filter-row::-webkit-scrollbar{
+    display:none;
+}
+
+.filter-button{
+    flex-shrink:0;
+
+    padding:10px 18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.filter-button.active{
+    background:var(--color-primary);
+    border-color:var(--color-primary);
+    color:#fff;
+}
+
+/* =========================
+   Battle List
+========================= */
+
+.battle-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.battle-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.battle-group-title{
+    font-size:15px;
+    font-weight:700;
+    color:var(--text-secondary);
+}
+
+/* =========================
+   Battle Detail
+========================= */
+
+.battle-detail-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.battle-summary{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.summary-box{
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    text-align:center;
+}
+
+.summary-label{
+    font-size:13px;
+    color:var(--text-secondary);
+}
+
+.summary-value{
+    margin-top:8px;
+
+    font-size:24px;
+    font-weight:800;
+}
+
+/* =========================
+   Teams
+========================= */
+
+.team-section{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.team-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:18px;
+    font-weight:700;
+}
+
+.team-color{
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+}
+
+.team-color.ally{
+    background:var(--color-success);
+}
+
+.team-color.enemy{
+    background:var(--color-danger);
+}
+
+.player-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* =========================
+   Result Image
+========================= */
+
+.result-image{
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:var(--radius-lg);
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+}
+
+.result-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:640px){
+
+    .battle-summary{
+        grid-template-columns:1fr;
+    }
+
+}
+/* =========================
+   Schedule Page
+========================= */
+
+.schedule-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.schedule-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.schedule-title{
+    font-size:26px;
+    font-weight:800;
+}
+
+.schedule-updated{
+    font-size:13px;
+    color:var(--text-muted);
+}
+
+.schedule-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.schedule-mode{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.schedule-mode-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:18px;
+    font-weight:700;
+}
+
+/* =========================
+   Rotation
+========================= */
+
+.rotation-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+}
+
+.rotation-stage{
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    transition:var(--transition);
+}
+
+.rotation-stage:hover{
+    background:var(--surface-hover);
+}
+
+.rotation-image{
+    width:100%;
+    aspect-ratio:16/9;
+
+    border-radius:12px;
+
+    background:var(--bg-secondary);
+
+    overflow:hidden;
+}
+
+.rotation-name{
+    margin-top:12px;
+
+    font-size:16px;
+    font-weight:700;
+}
+
+.rotation-rule{
+    margin-top:6px;
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+}
+
+/* =========================
+   Salmon Run Page
+========================= */
+
+.salmon-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.salmon-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.salmon-title{
+    font-size:26px;
+    font-weight:800;
+}
+
+.shift-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* =========================
+   Weapons
+========================= */
+
+.weapon-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.weapon-slot{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    aspect-ratio:1;
+
+    border-radius:14px;
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+}
+
+/* =========================
+   Boss
+========================= */
+
+.boss-section{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.boss-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+}
+
+.boss-image{
+    width:80px;
+    height:80px;
+
+    border-radius:16px;
+
+    background:var(--bg-secondary);
+
+    flex-shrink:0;
+}
+
+.boss-info{
+    flex:1;
+}
+
+.boss-name{
+    font-size:20px;
+    font-weight:700;
+}
+
+.boss-description{
+    margin-top:8px;
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+}
+
+/* =========================
+   Shift Timer
+========================= */
+
+.shift-timer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:18px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--color-primary);
+
+    color:#fff;
+
+    font-size:22px;
+    font-weight:800;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:640px){
+
+    .rotation-grid{
+        grid-template-columns:1fr;
+    }
+
+    .weapon-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .boss-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+/* =========================
+   Weapons Page
+========================= */
+
+.weapons-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.weapons-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.weapons-title{
+    font-size:26px;
+    font-weight:800;
+}
+
+.weapon-search{
+    margin-top:4px;
+}
+
+.weapon-category-list{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.weapon-category-list::-webkit-scrollbar{
+    display:none;
+}
+
+.weapon-category{
+
+    flex-shrink:0;
+
+    padding:10px 18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.weapon-category.active{
+
+    background:var(--color-primary);
+
+    border-color:var(--color-primary);
+
+    color:#fff;
+
+}
+
+.weapon-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+/* =========================
+   Weapon Detail
+========================= */
+
+.weapon-detail{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.weapon-banner{
+
+    width:100%;
+
+    aspect-ratio:16/8;
+
+    border-radius:var(--radius-lg);
+
+    background:var(--bg-secondary);
+
+}
+
+.weapon-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.weapon-stat{
+
+    padding:18px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.weapon-stat-title{
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+
+}
+
+.weapon-stat-value{
+
+    margin-top:8px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/* =========================
+   Gear Page
+========================= */
+
+.gear-page{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.gear-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.gear-title{
+
+    font-size:26px;
+
+    font-weight:800;
+
+}
+
+.gear-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+/* =========================
+   Favorite
+========================= */
+
+.favorite-section{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.favorite-empty{
+
+    padding:32px;
+
+    text-align:center;
+
+    color:var(--text-secondary);
+
+}
+
+/* =========================
+   Analysis Page
+========================= */
+
+.analysis-page{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.analysis-summary{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.analysis-chart{
+
+    width:100%;
+
+    height:280px;
+
+    border-radius:var(--radius-lg);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.analysis-ranking{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.analysis-ranking-item{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:16px;
+
+    border-radius:var(--radius-md);
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+}
+
+.analysis-ranking-left{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.analysis-rank{
+
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:640px){
+
+    .weapon-list,
+    .gear-grid,
+    .analysis-summary,
+    .weapon-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* =========================
+   Settings Page
+========================= */
+
+.settings-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.settings-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.settings-title{
+    font-size:26px;
+    font-weight:800;
+}
+
+.settings-group{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.settings-group-title{
+    font-size:18px;
+    font-weight:700;
+    color:var(--text);
+}
+
+.settings-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.settings-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+}
+
+.settings-item-left{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.settings-item-title{
+    font-size:16px;
+    font-weight:700;
+}
+
+.settings-item-description{
+    font-size:13px;
+    color:var(--text-secondary);
+}
+
+/* =========================
+   Profile
+========================= */
+
+.profile-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:20px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+}
+
+.profile-avatar{
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:var(--bg-secondary);
+
+    flex-shrink:0;
+}
+
+.profile-info{
+    flex:1;
+}
+
+.profile-name{
+    font-size:22px;
+    font-weight:700;
+}
+
+.profile-id{
+    margin-top:6px;
+
+    font-size:13px;
+
+    color:var(--text-secondary);
+}
+
+/* =========================
+   Data Manager
+========================= */
+
+.data-manager{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.data-card{
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+}
+
+.data-title{
+    font-size:16px;
+    font-weight:700;
+}
+
+.data-description{
+    margin-top:8px;
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+}
+
+.data-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+
+    margin-top:16px;
+}
+
+/* =========================
+   PWA
+========================= */
+
+.pwa-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:16px;
+
+    padding:18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+}
+
+/* =========================
+   Error Page
+========================= */
+
+.error-page{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:60vh;
+
+    text-align:center;
+
+    padding:24px;
+}
+
+.error-code{
+    font-size:72px;
+    font-weight:800;
+
+    color:var(--color-primary);
+}
+
+.error-title{
+    margin-top:12px;
+
+    font-size:28px;
+    font-weight:700;
+}
+
+.error-text{
+    margin-top:12px;
+
+    max-width:420px;
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+}
+
+/* =========================
+   Loading Page
+========================= */
+
+.loading-page{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:60vh;
+
+    gap:18px;
+}
+
+.loading-text{
+    color:var(--text-secondary);
+}
+
+/* =========================
+   Page Animation
+========================= */
+
+.page-enter{
+    animation:pageEnter .35s ease;
+}
+
+@keyframes pageEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(16px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width:640px){
+
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .settings-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+    }
+
+    .pwa-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
