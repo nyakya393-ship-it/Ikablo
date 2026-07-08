@@ -1648,3 +1648,84 @@
     scrollbar-color:var(--border) var(--bg);
 
 }
+/* =========================
+   Bottom Navigation
+========================= */
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    background:var(--surface);
+
+    border-top:1px solid var(--border);
+
+    z-index:1000;
+
+}
+
+
+.bottom-nav-item{
+
+    flex:1;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:4px;
+
+    border:none;
+
+    background:none;
+
+    color:var(--text-secondary);
+
+    font-size:12px;
+
+    cursor:pointer;
+
+}
+
+
+.bottom-nav-icon{
+
+    font-size:22px;
+
+}
+
+
+.bottom-nav-item.active{
+
+    color:var(--color-primary);
+
+}
+
+
+/* 下部タブ分の余白 */
+
+main,
+#app{
+
+    padding-bottom:90px;
+
+}
