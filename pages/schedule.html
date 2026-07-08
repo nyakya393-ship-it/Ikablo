@@ -1,1 +1,863 @@
+<section class="schedule-page">
 
+
+    <!-- =========================
+         Header
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h1 class="page-section-title">
+
+                スケジュール
+
+            </h1>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Mode Tabs
+    ========================== -->
+
+
+    <section class="mode-tabs">
+
+
+        <button
+
+            class="mode-tab active"
+
+            data-mode="regular"
+
+        >
+
+            バトル
+
+        </button>
+
+
+
+        <button
+
+            class="mode-tab"
+
+            data-mode="salmon"
+
+        >
+
+            サーモンラン
+
+        </button>
+
+
+
+        <button
+
+            class="mode-tab"
+
+            data-mode="event"
+
+        >
+
+            イベント
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Current Schedule
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                現在開催中
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="schedule-card">
+
+
+            <div class="schedule-header">
+
+
+                <span class="schedule-status">
+
+                    NOW
+
+                </span>
+
+
+                <span
+
+                    id="currentTimer"
+
+                >
+
+                    残り時間 --
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="schedule-content">
+
+
+                <div class="schedule-rule">
+
+
+                    ルール
+
+                    <strong
+
+                        id="currentRule"
+
+                    >
+
+                        --
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <div class="schedule-stages">
+
+
+                    <div class="stage-card">
+
+
+                        <div class="stage-image">
+
+                        </div>
+
+
+                        <p
+
+                            id="currentStage1"
+
+                        >
+
+                            ステージ1
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="stage-card">
+
+
+                        <div class="stage-image">
+
+                        </div>
+
+
+                        <p
+
+                            id="currentStage2"
+
+                        >
+
+                            ステージ2
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Next Schedule
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                次の予定
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="nextScheduleList"
+
+            class="schedule-list"
+
+        >
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Ranked Battle Schedule
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                バンカラマッチ
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="rankedSchedule"
+
+            class="schedule-list"
+
+        >
+
+
+            <article class="schedule-card">
+
+
+                <div class="schedule-header">
+
+
+                    <span class="schedule-mode">
+
+                        ガチエリア
+
+                    </span>
+
+
+                    <span class="schedule-time">
+
+                        --
+
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="schedule-stages">
+
+
+                    <div class="stage-card">
+
+
+                        <div class="stage-image">
+
+                        </div>
+
+
+                        <p>
+
+                            ステージ1
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="stage-card">
+
+
+                        <div class="stage-image">
+
+                        </div>
+
+
+                        <p>
+
+                            ステージ2
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         X Match Schedule
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                Xマッチ
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    現在のルール
+
+                </div>
+
+
+                <div
+
+                    id="xRule"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    ステージ
+
+                </div>
+
+
+                <div
+
+                    id="xStage"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Event Match
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                イベントマッチ
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="eventSchedule"
+
+            class="schedule-card"
+
+        >
+
+
+            <div class="schedule-title">
+
+
+                イベント情報
+
+
+            </div>
+
+
+
+            <p
+
+                id="eventDescription"
+
+            >
+
+
+                開催予定のイベントを表示します。
+
+
+            </p>
+
+
+
+            <div class="schedule-time">
+
+
+                開催時間 --
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Stage Rotation
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ステージローテーション
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="stageRotation"
+
+            class="stage-grid"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Salmon Run Schedule
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                サーモンラン
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="salmon-schedule-card">
+
+
+            <div class="schedule-header">
+
+
+                <span class="schedule-status">
+
+                    開催中
+
+                </span>
+
+
+                <span
+
+                    id="salmonTimer"
+
+                >
+
+                    残り時間 --
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="salmon-content">
+
+
+                <div class="salmon-stage">
+
+
+                    <div class="stage-image">
+
+                    </div>
+
+
+                    <h3
+
+                        id="salmonStageName"
+
+                    >
+
+                        ステージ名
+
+                    </h3>
+
+
+                </div>
+
+
+
+                <div class="salmon-weapons">
+
+
+                    <h3>
+
+                        支給ブキ
+
+                    </h3>
+
+
+
+                    <div
+
+                        id="salmonWeapons"
+
+                        class="weapon-grid"
+
+                    >
+
+
+                        <div class="weapon-card">
+
+                            ブキ1
+
+                        </div>
+
+
+                        <div class="weapon-card">
+
+                            ブキ2
+
+                        </div>
+
+
+                        <div class="weapon-card">
+
+                            ブキ3
+
+                        </div>
+
+
+                        <div class="weapon-card">
+
+                            ブキ4
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Salmon Event
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                サーモンランイベント
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="salmonEvent"
+
+            class="data-card"
+
+        >
+
+
+            <div class="data-title">
+
+                ビッグラン・特殊イベント
+
+            </div>
+
+
+            <div class="data-description">
+
+
+                開催中のイベント情報を表示します。
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Update Status
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="data-card">
+
+
+            <div class="data-title">
+
+                データ更新状態
+
+            </div>
+
+
+
+            <div
+
+                id="scheduleUpdateStatus"
+
+                class="data-description"
+
+            >
+
+                最終更新 --
+
+            </div>
+
+
+
+            <button
+
+                id="updateScheduleButton"
+
+                class="btn btn-primary"
+
+            >
+
+                更新する
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Loading / Error
+    ========================== -->
+
+
+    <section
+
+        id="scheduleLoading"
+
+        class="loading-page hidden"
+
+    >
+
+
+        <div class="spinner">
+
+        </div>
+
+
+        <p class="loading-text">
+
+            スケジュール取得中...
+
+        </p>
+
+
+    </section>
+
+
+
+    <section
+
+        id="scheduleError"
+
+        class="error-page hidden"
+
+    >
+
+
+        <h2>
+
+            情報を取得できませんでした
+
+        </h2>
+
+
+        <button
+
+            id="scheduleRetry"
+
+            class="btn btn-primary"
+
+        >
+
+            再試行
+
+        </button>
+
+
+    </section>
+
+
+</section>
