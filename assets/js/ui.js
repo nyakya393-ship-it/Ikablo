@@ -284,7 +284,74 @@ button.textContent =
 
 button.addEventListener(
     "click",
-    ()=>{
+    async ()=>{
+
+
+        button.disabled = true;
+
+        button.textContent =
+            "接続中...";
+
+
+
+        try{
+
+
+            const result =
+                await NintendoAPI.connect();
+
+
+
+            if(result.success){
+
+
+                saveNintendoAccount({
+
+                    linked:true,
+
+                    username:"Nintendo User"
+
+                });
+
+
+
+                button.textContent =
+                    "連携済み";
+
+
+            }
+            else{
+
+
+                button.textContent =
+                    "連携失敗";
+
+
+            }
+
+
+        }
+        catch(error){
+
+
+            console.error(
+                error
+            );
+
+
+            button.textContent =
+                "エラー";
+
+
+        }
+
+
+
+        button.disabled = false;
+
+
+    }
+);
 
 
         location.hash =
