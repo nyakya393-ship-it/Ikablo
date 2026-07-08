@@ -1,1 +1,917 @@
+<section class="gear-page">
 
+
+    <!-- =========================
+         Header
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h1 class="page-section-title">
+
+                ギア管理
+
+            </h1>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Current Gear
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                現在の装備
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="gear-grid">
+
+
+            <article class="gear-card">
+
+
+                <div class="gear-image">
+
+                </div>
+
+
+                <h3>
+
+                    アタマ
+
+                </h3>
+
+
+                <p id="headGear">
+
+                    --
+
+                </p>
+
+
+            </article>
+
+
+
+            <article class="gear-card">
+
+
+                <div class="gear-image">
+
+                </div>
+
+
+                <h3>
+
+                    フク
+
+                </h3>
+
+
+                <p id="clothesGear">
+
+                    --
+
+                </p>
+
+
+            </article>
+
+
+
+            <article class="gear-card">
+
+
+                <div class="gear-image">
+
+                </div>
+
+
+                <h3>
+
+                    クツ
+
+                </h3>
+
+
+                <p id="shoesGear">
+
+                    --
+
+                </p>
+
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Gear Ability Summary
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ギアパワー
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="abilitySummary"
+
+            class="ability-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Ability Template
+    ========================== -->
+
+
+    <template id="abilityTemplate">
+
+
+        <article class="ability-card">
+
+
+            <div class="ability-icon">
+
+            </div>
+
+
+            <div class="ability-info">
+
+
+                <h3>
+
+                    ギアパワー名
+
+                </h3>
+
+
+                <p>
+
+                    Lv --
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+    </template>
+        <!-- =========================
+         Gear Sets
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ギア構成
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="data-actions">
+
+
+            <button
+
+                id="createGearSet"
+
+                class="btn btn-primary"
+
+            >
+
+                新しい構成を作成
+
+            </button>
+
+
+
+            <button
+
+                id="saveGearSet"
+
+                class="btn btn-secondary"
+
+            >
+
+                現在の構成を保存
+
+            </button>
+
+
+        </div>
+
+
+
+        <div
+
+            id="gearSetList"
+
+            class="gear-set-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Gear Set Template
+    ========================== -->
+
+
+    <template id="gearSetTemplate">
+
+
+        <article class="gear-set-card">
+
+
+            <div class="gear-set-header">
+
+
+                <h3 class="gear-set-name">
+
+                    構成名
+
+                </h3>
+
+
+                <button
+
+                    class="gear-delete"
+
+                >
+
+                    削除
+
+                </button>
+
+
+            </div>
+
+
+
+            <div class="gear-set-content">
+
+
+                <div>
+
+                    アタマ
+
+                    <span class="set-head">
+
+                        --
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    フク
+
+                    <span class="set-clothes">
+
+                        --
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    クツ
+
+                    <span class="set-shoes">
+
+                        --
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+
+                class="gear-use-button"
+
+            >
+
+                装備する
+
+            </button>
+
+
+        </article>
+
+
+    </template>
+
+
+
+    <!-- =========================
+         Gear Comparison
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ギア比較
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="comparison-grid">
+
+
+            <div class="comparison-card">
+
+
+                <h3>
+
+                    現在の構成
+
+                </h3>
+
+
+                <div
+
+                    id="currentGearCompare"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="comparison-card">
+
+
+                <h3>
+
+                    比較対象
+
+                </h3>
+
+
+                <div
+
+                    id="targetGearCompare"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Recommended Gear
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                おすすめ構成
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="recommendedGear"
+
+            class="gear-recommend-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+        <!-- =========================
+         Gear Ability Analysis
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ギアパワー分析
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    よく使うギアパワー
+
+                </div>
+
+
+                <div
+
+                    id="popularAbility"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    合計ギア数
+
+                </div>
+
+
+                <div
+
+                    id="totalGearCount"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    最大効果量
+
+                </div>
+
+
+                <div
+
+                    id="maxAbilityPower"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="dashboard-item">
+
+
+                <div class="dashboard-label">
+
+                    お気に入り数
+
+                </div>
+
+
+                <div
+
+                    id="favoriteGearCount"
+
+                    class="dashboard-value"
+
+                >
+
+                    --
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Weapon Recommendation
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ブキ別おすすめギア
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div
+
+            id="weaponGearRecommendation"
+
+            class="recommend-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Rule Recommendation
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="page-section-header">
+
+
+            <h2 class="page-section-title">
+
+                ルール別おすすめ
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="filter-row">
+
+
+            <button
+
+                class="filter-button active"
+
+                data-rule="all"
+
+            >
+
+                すべて
+
+            </button>
+
+
+
+            <button
+
+                class="filter-button"
+
+                data-rule="area"
+
+            >
+
+                エリア
+
+            </button>
+
+
+
+            <button
+
+                class="filter-button"
+
+                data-rule="tower"
+
+            >
+
+                ヤグラ
+
+            </button>
+
+
+
+            <button
+
+                class="filter-button"
+
+                data-rule="rainmaker"
+
+            >
+
+                ホコ
+
+            </button>
+
+
+
+            <button
+
+                class="filter-button"
+
+                data-rule="clam"
+
+            >
+
+                アサリ
+
+            </button>
+
+
+        </div>
+
+
+
+        <div
+
+            id="ruleGearRecommendation"
+
+            class="recommend-list"
+
+        >
+
+
+            <!-- JavaScript生成 -->
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Data Control
+    ========================== -->
+
+
+    <section class="page-section">
+
+
+        <div class="data-actions">
+
+
+            <button
+
+                id="refreshGearData"
+
+                class="btn btn-primary"
+
+            >
+
+                ギア情報更新
+
+            </button>
+
+
+
+            <button
+
+                id="exportGearData"
+
+                class="btn btn-secondary"
+
+            >
+
+                構成を書き出す
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         Loading / Error
+    ========================== -->
+
+
+    <section
+
+        id="gearLoading"
+
+        class="loading-page hidden"
+
+    >
+
+
+        <div class="spinner">
+
+        </div>
+
+
+        <p class="loading-text">
+
+            ギアデータ取得中...
+
+        </p>
+
+
+    </section>
+
+
+
+    <section
+
+        id="gearError"
+
+        class="error-page hidden"
+
+    >
+
+
+        <h2>
+
+            ギアデータを取得できませんでした
+
+        </h2>
+
+
+        <button
+
+            id="gearRetry"
+
+            class="btn btn-primary"
+
+        >
+
+            再試行
+
+        </button>
+
+
+    </section>
+
+
+</section>
