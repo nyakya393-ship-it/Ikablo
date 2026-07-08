@@ -26,7 +26,14 @@ document.addEventListener(
         initAccountButton();
 
 
-        NintendoAPI.initialize();
+
+        if(
+            typeof NintendoAPI !== "undefined"
+        ){
+
+            NintendoAPI.initialize();
+
+        }
 
 
     }
