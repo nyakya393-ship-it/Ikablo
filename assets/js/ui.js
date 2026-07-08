@@ -268,7 +268,36 @@ function renderBattleList(){
 
             `;
 
+const button =
+    document.createElement(
+        "button"
+    );
 
+
+button.className =
+    "btn btn-primary btn-block";
+
+
+button.textContent =
+    "詳しく見る";
+
+
+button.addEventListener(
+    "click",
+    ()=>{
+
+
+        location.hash =
+            `battle-detail?id=${battle.id}`;
+
+
+    }
+);
+
+
+card.appendChild(
+    button
+);
 
             container.appendChild(
                 card
