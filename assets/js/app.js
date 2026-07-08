@@ -9,13 +9,28 @@ document.addEventListener(
     ()=>{
 
 
+        document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+
+
+        initializeStorage();
+
+
         initRouter();
 
-initTabs();
 
-initAccountButton();
+        initTabs();
 
-renderBattleList();
+
+        initAccountButton();
+
+
+        NintendoAPI.initialize();
+
+
+    }
+);
 
 
     }
